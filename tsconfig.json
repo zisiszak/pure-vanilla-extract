@@ -2,26 +2,20 @@
     "compileOnSave": false,
     "compilerOptions": {
         "target": "ES2020",
-        "module": "ESNext",
-        "lib": ["ESNext", "DOM"],
+        "module": "ES2020",
+        "lib": ["ES2020", "DOM"],
 
         "strict": true,
 
-        "rootDir": "./src",
-        "outDir": "./dist",
-
-        "sourceMap": true,
-        "declaration": true,
-        "declarationMap": true,
-        "noEmit": false,
+        "noEmit": true,
 
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
+        // "skipLibCheck": true,
         "skipDefaultLibCheck": true,
-        "resolveJsonModule": true,
         "isolatedModules": true,
+        "moduleResolution": "Bundler",
 
         "noUnusedLocals": true,
         "noUnusedParameters": true,
@@ -30,6 +24,21 @@
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true,
-        "strictFunctionTypes": true
-    }
+        "strictFunctionTypes": true,
+        "composite": true,
+
+        "plugins": [
+            {
+                "name": "@styled/typescript-styled-plugin",
+                "tags": ["pure"]
+            }
+        ]
+    },
+    "exclude": ["reference", "dist"],
+    "include": ["src", "vite.config.ts"],
+    "references": [
+        {
+            "path": "./tsconfig.vite.json"
+        }
+    ]
 }
