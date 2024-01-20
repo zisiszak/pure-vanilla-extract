@@ -1,6 +1,6 @@
 import { StyleRule } from '@vanilla-extract/css';
 import { compile } from 'stylis';
-import { pureTest } from './css.css';
+// import { pureTest } from './css.css';
 
 const isCreatedVarAssignment = (key: string) => key.startsWith('var(');
 const isNewVarAssignment = (key: string) => key.startsWith('--');
@@ -41,7 +41,6 @@ export const mapper = (compiled: ReturnType<typeof compile>): StyleRule => {
                 .split(',')
                 .map(v => (v.includes('&') ? v.replace('&\f', '&') : `&${v}`))
                 .join(', ');
-            console.log(props);
             result['selectors'] ??= {};
             result['selectors'][selector] = mapper(children);
         }
@@ -56,8 +55,7 @@ export const mapper = (compiled: ReturnType<typeof compile>): StyleRule => {
             result['@media'][rule] = mapper(children);
         }
     }
-    console.log(result);
     return result;
 };
 
-export const test = pureTest;
+// export const test = pureTest;

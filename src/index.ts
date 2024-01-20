@@ -6,5 +6,3 @@ export const css = (
     strings: TemplateStringsArray,
     ...interpolations: Interpolation<object>[]
 ) => mapper(compile(String.raw({ raw: strings }, ...interpolations)));
-
-export default css;

@@ -25,16 +25,9 @@
         "noImplicitThis": true,
         "strictNullChecks": true,
         "strictFunctionTypes": true,
-        "composite": true,
-
-        "plugins": [
-            {
-                "name": "@styled/typescript-styled-plugin",
-                "tags": ["pure"]
-            }
-        ]
+        "composite": true
     },
-    "exclude": ["reference", "dist"],
+    "exclude": ["reference", "dist", "css.css.ts"],
     "include": ["src", "vite.config.ts"],
     "references": [
         {
