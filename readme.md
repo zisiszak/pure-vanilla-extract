@@ -12,7 +12,7 @@ import { createVar, style } from '@vanilla-extract/css'
 
 const veCompliantVar = createVar();
 
-export const style(pure`
+export const style(css`
     display: block;
     position: relative;
 

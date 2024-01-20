@@ -7,7 +7,11 @@
 
         "strict": true,
 
-        "noEmit": true,
+        "noEmit": false,
+        "outDir": "./dist",
+        "rootDir": "./src",
+
+        "removeComments": true,
 
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -27,11 +31,7 @@
         "strictFunctionTypes": true,
         "composite": true
     },
-    "exclude": ["reference", "dist", "css.css.ts"],
-    "include": ["src", "vite.config.ts"],
-    "references": [
-        {
-            "path": "./tsconfig.vite.json"
-        }
-    ]
+    // "exclude": ["reference", "dist", "css.css.ts"],
+    // "include": ["src"]
+    "files": ["src/index.ts", "src/types.ts", "src/css.ts"]
 }

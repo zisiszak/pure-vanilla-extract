@@ -1,0 +1,8 @@
+index.html
+src
+tsconfig.josn
+tsconfig.vite.json
+vite.config.ts
+tsconfig.tsbuildinfo
+node_modules
+.vscode
