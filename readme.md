@@ -30,12 +30,12 @@ export const style(css`
     }
 
     /* SELECTORS */
-    /* If a selector rule does not include an `&`, it will be placed at the start of the rule! */
+    /* If a selector rule does not include an &, it will be placed at the start of the rule! */
     :hover, &:hover {
-        /* both resolve to: `&:hover` */
+        /* both resolve to: &:hover */
     }
     :hover > div {
-        /* resolves to: `&:hover > div` */
+        /* resolves to: &:hover > div */
     }
 `)
 ```
