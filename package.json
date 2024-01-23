@@ -1,7 +1,7 @@
 {
     "name": "pure-vanilla-extract",
     "description": "A css-to-object function for use with @vanilla-extract (plus some misc. utils)",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "author": {
         "name": "Zisis Zak",
         "url": "https://github.com/zisiszak"
