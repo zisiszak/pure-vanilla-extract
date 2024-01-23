@@ -1,6 +1,5 @@
-import { StyleRule } from '@vanilla-extract/css';
+import { type StyleRule } from '@vanilla-extract/css';
 import { compile } from 'stylis';
-// import { pureTest } from './css.css';
 
 const isCreatedVarAssignment = (key: string) => key.startsWith('var(');
 const isNewVarAssignment = (key: string) => key.startsWith('--');
@@ -22,10 +21,6 @@ export const mapper = (compiled: ReturnType<typeof compile>): StyleRule => {
                 result[props] = children as any;
                 continue;
             }
-            if (typeof props === 'string') {
-                // idk, when are children an element[] in a declaration?
-            } else {
-            }
             continue;
         }
 
@@ -34,8 +29,11 @@ export const mapper = (compiled: ReturnType<typeof compile>): StyleRule => {
             Array.isArray(props) &&
             Array.isArray(children)
         ) {
-            // if an & is missing, place it at the start (and suffer the consequences if you intended it to be elsewhere)
-            // also stylis rmoves & characters in the output for some reason, but it's preserved in the raw value as &\f. But @VE hates the \f, so it gotta go
+            // if an & is missing, place it at the start (and suffer the
+            // consequences if you intended it to be elsewhere)
+
+            // Stylis removes & in the output, replaces them with '&\f' in the
+            // raw string value. @VE hates the `\f`
             const val = value.toString();
             const selector = val
                 .split(',')
@@ -57,5 +55,3 @@ export const mapper = (compiled: ReturnType<typeof compile>): StyleRule => {
     }
     return result;
 };
-
-// export const test = pureTest;

@@ -1,6 +1,4 @@
-import { ComplexStyleRule } from '@vanilla-extract/css';
-import { Properties } from 'csstype';
-
+import { type ComplexStyleRule } from './vanilla-types.js';
 export type Interpolation<Props extends object> =
     | string
     | null
@@ -11,20 +9,11 @@ export type Interpolation<Props extends object> =
     | ComplexStyleRule
     | Interpolation<Props>[];
 
-// utils from @VE
-export interface ContainerProperties {
-    container?: string;
-    containerType?: 'size' | 'inline-size' | (string & {});
-    containerName?: string;
-}
-export type CSSTypeProperties = Properties<number | (string & {})> &
-    ContainerProperties;
-export type CSSVarFunction =
-    | `var(--${string})`
-    | `var(--${string}, ${string | number})`;
-export type CSSProperties = {
-    [Property in keyof CSSTypeProperties]:
-        | CSSTypeProperties[Property]
-        | CSSVarFunction
-        | Array<CSSVarFunction | CSSTypeProperties[Property]>;
+export type Contract = {
+    [key: string]: string | Contract;
+};
+export type Answers<Conditions extends Contract> = {
+    [key in keyof Conditions]?: Conditions[key] extends Contract
+        ? Answers<Conditions[key]>
+        : string | number;
 };

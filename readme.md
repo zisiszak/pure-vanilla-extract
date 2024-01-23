@@ -4,7 +4,9 @@ A simple `css` template tag that allows you to write styled for @vanilla-extract
 
 ## Usage
 
-In your \*.css.ts file:
+In your \*.css.ts file...
+
+### pure.css
 
 ```ts
 import { css } from 'pure-vanilla-extract'
@@ -39,3 +41,8 @@ export const style(css`
     }
 `)
 ```
+
+### pure.assignVars
+
+Use assignVars() within a `pure.css` call as you would with
+`@vanilla-extract/css`.

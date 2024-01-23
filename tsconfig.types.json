@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist/types",
+        "declaration": true,
+        "declarationMap": true,
+        "composite": true,
+        "emitDeclarationOnly": true,
+        "noEmit": false,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "declarationDir": "./dist/types"
+    }
+}
